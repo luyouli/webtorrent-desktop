@@ -1,4 +1,3 @@
-const path = require('path')
 const React = require('react')
 
 const colors = require('material-ui/styles/colors')
@@ -99,7 +98,7 @@ class PreferencesPage extends React.Component {
           displayValue={playerName}
           onChange={this.handleExternalPlayerPathChange}
           title='External player'
-          value={playerPath ? path.dirname(playerPath) : null} />
+          value={playerPath} />
       </Preference>
     )
   }
@@ -132,11 +131,11 @@ class PreferencesPage extends React.Component {
     dispatch('updatePreferences', 'autoAddTorrents', isChecked)
 
     if (isChecked) {
-      dispatch('startFolderWatcher', null)
+      dispatch('startFolderWatcher')
       return
     }
 
-    dispatch('stopFolderWatcher', null)
+    dispatch('stopFolderWatcher')
   }
 
   torrentsFolderPathSelector () {
@@ -149,10 +148,9 @@ class PreferencesPage extends React.Component {
             title: 'Select folder to watch for new torrents',
             properties: [ 'openDirectory' ]
           }}
-          displayValue={torrentsFolderPath || ''}
           onChange={this.handletorrentsFolderPathChange}
           title='Folder to watch'
-          value={torrentsFolderPath ? path.dirname(torrentsFolderPath) : null} />
+          value={torrentsFolderPath} />
       </Preference>
     )
   }
