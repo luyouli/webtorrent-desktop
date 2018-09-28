@@ -95,7 +95,6 @@ class PreferencesPage extends React.Component {
             title: 'Select media player app',
             properties: [ 'openFile' ]
           }}
-          displayValue={playerName}
           onChange={this.handleExternalPlayerPathChange}
           title='External player'
           value={playerPath} />

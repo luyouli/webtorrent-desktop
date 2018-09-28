@@ -17,7 +17,6 @@ class PathSelector extends React.Component {
     return {
       className: React.PropTypes.string,
       dialog: React.PropTypes.object,
-      displayValue: React.PropTypes.string,
       id: React.PropTypes.string,
       onChange: React.PropTypes.func,
       title: React.PropTypes.string.isRequired,
@@ -66,7 +65,7 @@ class PathSelector extends React.Component {
     const textFieldStyle = {
       flex: '1'
     }
-    const text = this.props.displayValue || this.props.value
+    const text = this.props.value || ''
     const buttonStyle = {
       marginLeft: 10
     }
